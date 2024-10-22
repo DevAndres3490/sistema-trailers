@@ -1,6 +1,6 @@
 package com.sistema.trailers.servicio;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
