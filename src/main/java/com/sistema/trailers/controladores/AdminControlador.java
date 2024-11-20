@@ -74,7 +74,7 @@ public class AdminControlador {
 	
 	@GetMapping("/peliculas/{id}/editar")
 	public ModelAndView mostrarFormilarioDeEditarPelicula(@PathVariable Integer id) {
-		Pelicula pelicula = peliculaRepositorio.getOne(id);
+		Pelicula pelicula = peliculaRepositorio.getReferenceById(id);
 		List<Genero> generos = generoRepositorio.findAll(Sort.by("titulo"));
 		
 		return new ModelAndView("admin/editar-pelicula")
@@ -91,7 +91,7 @@ public class AdminControlador {
 					.addObject("generos",generos);
 		}
 		
-		Pelicula peliculaDB = peliculaRepositorio.getOne(id);
+		Pelicula peliculaDB = peliculaRepositorio.getReferenceById(id);
 		peliculaDB.setTitulo(pelicula.getTitulo());
 		peliculaDB.setSinopsis(pelicula.getSinopsis());
 		peliculaDB.setFechaEstreno(pelicula.getFechaEstreno());
@@ -110,7 +110,7 @@ public class AdminControlador {
 	
 	@PostMapping("/peliculas/{id}/eliminar")
 	public String eliminarPelicula(@PathVariable Integer id) {
-		Pelicula pelicula = peliculaRepositorio.getOne(id);
+		Pelicula pelicula = peliculaRepositorio.getReferenceById(id);
 		peliculaRepositorio.delete(pelicula);
 		servicio.eliminarArchivo(pelicula.getRutaPortada());
 		

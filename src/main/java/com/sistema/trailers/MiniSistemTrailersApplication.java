@@ -1,6 +1,6 @@
 package com.sistema.trailers;
 
-import java.util.List;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,9 +15,9 @@ public class MiniSistemTrailersApplication {
 		
 		
 	}
-	
-	@Bean
-	public SpringDataDialect springDataDialect( ) {
+
+    @Bean
+    SpringDataDialect springDataDialect() {
 		return new SpringDataDialect();
 	}
 

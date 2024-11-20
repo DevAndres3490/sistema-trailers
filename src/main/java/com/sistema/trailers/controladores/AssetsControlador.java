@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sistema.trailers.servicio.AlmacenServicio;
+
 import com.sistema.trailers.servicio.AlmacenServicioImpl;
 
 @RestController
@@ -18,7 +18,7 @@ public class AssetsControlador {
 	private AlmacenServicioImpl servicio;
 	
 	@GetMapping("/{filename:.+}")
-	public Resource obtenerRecurso(@PathVariable("filename") String filename ) {
+	public Resource obtenerRecurso(@PathVariable String filename ) {
 		
 		return servicio.cargarComoRecurso(filename);
 	}

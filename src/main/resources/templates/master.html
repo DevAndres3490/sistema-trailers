@@ -29,14 +29,26 @@
 form .invalid-feedback {
 	display: block;
 }
+
+/* Estilo inicial de los íconos */
+.social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto de cambio de color y escala al pasar el mouse */
+.social-icon:hover {
+    transform: scale(1.3); /* Escala el tamaño del icono */
+}
+
 </style>
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" >
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/">CinemaTrailer</a>
-			<button class="navbar-toggler" type="button"
+			<a class="navbar-brand fs-1 d-sm-block d-lg-none" href="/">CinemaTrailer</a>
+			<a class="navbar-brand fs-3 d-lg-block d-sm-none" href="/">CinemaTrailer</a>
+			<button class="navbar-toggler fs-1" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
@@ -44,18 +56,57 @@ form .invalid-feedback {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-					<li class="nav-item"><a class="nav-link" href="/peliculas">Peliculas</a></li>
-					<li class="nav-item"><a class="nav-link" href="/admin">Administración</a></li>
+					<li class="nav-item"><a class="nav-link d-lg-block d-sm-none" href="/">Inicio</a></li>
+					<li class="nav-item"><a class="nav-link fs-3 d-sm-block d-lg-none" href="/peliculas">Peliculas</a></li>
+					<li class="nav-item"><a class="nav-link d-lg-block d-sm-none" href="/peliculas">Peliculas</a></li>
+					<li class="nav-item"><a class="nav-link fs-3 d-sm-block d-lg-none" href="/admin">Administración</a></li>
+					<li class="nav-item"><a class="nav-link d-lg-block d-sm-none" href="/admin">Administración</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<div layout:fragment="content" class="container my-5">
+	
+	
+	
+	
+	
+	sdfdsfadsf
+	
+	
 	</div>
 
+<div layout:fragment="scripts" th:remove="tag">
 
-	<script
+</div>
+
+</body>
+<footer class="text-center text-white bg-primary" >
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <div class="d-flex justify-content-center">
+            <div class="me-4 "><a href="https://linkedin.com/in/andres-pineda-106b3820a" class="social-icon"><i class="fab fa-linkedin fa-2x text-white social-icon"></i></a>
+            </div>
+
+            <div><a href="https://github.com/DevAndres3490" class="social-icon"><i class="fab fa-github fa-2x text-white social-icon"></i></a></div>
+
+        </div>
+       
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <span>Andres Pineda</span>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <script
 		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
 	<script
@@ -68,9 +119,4 @@ form .invalid-feedback {
 	<script
 		src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-<div layout:fragment="scripts" th:remove="tag">
-
-</div>
-
-</body>
 </html>

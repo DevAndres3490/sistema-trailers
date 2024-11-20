@@ -45,7 +45,7 @@ public class HomeController {
 	
 	@GetMapping("/peliculas/{id}")
 	public ModelAndView mostrarDetallesDePelicula(@PathVariable Integer id) {
-		Pelicula pelicula = peliculaRepositorio.getOne(id);
+		Pelicula pelicula = peliculaRepositorio.getReferenceById(id);
 		
 		return new ModelAndView("pelicula").addObject("pelicula",pelicula);
 	}
